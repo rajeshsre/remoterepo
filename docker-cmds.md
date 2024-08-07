@@ -92,3 +92,9 @@ total 8
 root@docker:/var/lib/docker/volumes/html-volume/_data# rm -rf index.html 
 root@docker:/var/lib/docker/volumes/html-volume/_data# vi index.html
 root@docker:/var/lib/docker/volumes/html-volume/_data# 
+
+To clean out all containers on my development machine:
+docker rm -v -f $(docker ps -qa)
+
+Remove containers based on status:
+docker rm -v $(docker ps --filter status=exited -q)
