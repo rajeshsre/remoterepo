@@ -50,7 +50,7 @@ root@docker:~# ls /var/lib/docker/volumes/html-volume/
 _data
 root@docker:~# ls /var/lib/docker/volumes/html-volume/_data/
 50x.html  index.html
-root@docker:~# 
+
 
 root@docker:/var/lib/docker/volumes/html-volume/_data# 
 root@docker:/var/lib/docker/volumes/html-volume/_data# docker ps
@@ -65,11 +65,11 @@ root@docker:/var/lib/docker/volumes/html-volume/_data# docker rm -f nginx-contai
 nginx-container
 root@docker:/var/lib/docker/volumes/html-volume/_data# 
 root@docker:/var/lib/docker/volumes/html-volume/_data# cd
-root@docker:~# 
+
 
 root@docker:~# ls /var/lib/docker/volumes/html-volume/_data/
 50x.html  index.html
-root@docker:~# 
+ 
 
 root@docker:~# docker container run -d --name nginx-container -P --mount type=volume,source=html-volume,target=/usr/share/nginx/html nginx
 b9b9f15def354f7e7b22e2845ec4987e5c2735c84afd1b52184cbd63df237e61
@@ -79,7 +79,7 @@ b9b9f15def35   nginx     "/docker-entrypoint.…"   7 seconds ago    Up 7 second
 f7cd09589b0a   nginx     "/docker-entrypoint.…"   17 minutes ago   Up 17 minutes   80/tcp                                    bind-volume-cont1
 5e6a469fac47   nginx     "/docker-entrypoint.…"   21 minutes ago   Up 21 minutes   80/tcp                                    bind-volume-cont
 3b8ecc18ccae   nginx     "/docker-entrypoint.…"   32 minutes ago   Up 32 minutes   80/tcp                                    bind-mount-cont
-root@docker:~# 
+
 
 root@docker:~# ls /var/lib/docker/volumes/html-volume/_data/
 50x.html  index.html
